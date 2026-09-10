@@ -1,5 +1,6 @@
 ![made-with-python](https://img.shields.io/badge/Made%20with-Python3-brightgreen)
 [![Discord](https://img.shields.io/badge/Discord-join_the_community-5865F2?logo=discord&logoColor=white)](https://discord.gg/PsWpeNUzhk)
+[![License: MIT](https://img.shields.io/badge/license-MIT-blue)](LICENSE)
 
 <!-- LOGO -->
 <br />

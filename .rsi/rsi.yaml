@@ -1,0 +1,12 @@
+schema: hydra-rsi/1
+# Size of the Python source a user downloads (fastcopy.py is fetched with wget and imported in Colab).
+# Smaller shipped source means a faster, lighter download and less code to maintain.
+metrics:
+  - id: script.shipped_bytes
+    kind: size
+    better: lower
+    unit: bytes
+    measure: "python scripts/rsi/shipped_bytes.py"
+    pick: 'shipped_bytes=(\d+)'
+    gate: exact
+    light: true

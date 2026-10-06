@@ -189,14 +189,10 @@ if __name__ == '__main__':
     args = parser.parse_args()
     assert args.thread > 0, "Thread number cannot be less than 1."
     size = args.size_limit.lower()
-    if size.endswith('kb'):
-        size = float(size[:-2]) * 1000
-    elif size.endswith('mb'):
-        size = float(size[:-2]) * 1_000_000
-    elif size.endswith('gb'):
-        size = float(size[:-2]) * 1_000_000_000
-    elif size.endswith('b'):
-        size = float(size[:-1])
+    for suffix, scale in (('kb', 1000), ('mb', 1_000_000), ('gb', 1_000_000_000), ('b', 1)):
+        if size.endswith(suffix):
+            size = float(size[:-len(suffix)]) * scale
+            break
     else:
         try:
             size = float(size) * 1_000_000

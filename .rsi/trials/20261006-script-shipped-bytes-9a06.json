@@ -1,0 +1,24 @@
+{
+ "closed": null,
+ "def_hash": "84da278807f04141",
+ "id": "20261006-script-shipped-bytes-9a06",
+ "idea": "Replace the four-branch size-suffix if/elif chain in fastcopy.py with one suffix table loop (same parsing)",
+ "lane": "normal",
+ "metric": "script.shipped_bytes",
+ "opened": {
+  "at": "2026-10-06T11:01:30+00:00",
+  "by": "blogi",
+  "commit": "ee9aa147e46487eb2993aff89be7122198584ac9",
+  "machine": "MPC-HELL"
+ },
+ "pass_line": null,
+ "predict": {
+  "expect": 150.0,
+  "hi": 240.0,
+  "lo": 60.0,
+  "p_keep": 0.8
+ },
+ "probe_minutes": null,
+ "project": "fastcolabcopy",
+ "schema": "hydra-rsi-trial/1"
+}

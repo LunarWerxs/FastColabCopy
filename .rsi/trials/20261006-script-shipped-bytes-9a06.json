@@ -1,5 +1,88 @@
 {
- "closed": null,
+ "closed": {
+  "a": {
+   "commit": "ee9aa147e46487eb2993aff89be7122198584ac9",
+   "def_hash": "84da278807f04141",
+   "dirty": false,
+   "id": "m-20261006T110134-0f899f",
+   "load_after": 0.531,
+   "load_before": 0.422,
+   "machine": "MPC-HELL",
+   "metric": "script.shipped_bytes",
+   "project": "fastcolabcopy",
+   "reason": null,
+   "seconds": 0.227,
+   "settings": {
+    "gate": "exact",
+    "kind": "size",
+    "measure_files": {
+     "scripts/rsi/shipped_bytes.py": "a7627161f713de86dd6773c91758dd1a2baffd57"
+    }
+   },
+   "started": "2026-10-06T11:01:34+00:00",
+   "status": "ok",
+   "value": 8702
+  },
+  "applies_if": null,
+  "at": "2026-10-06T11:01:59+00:00",
+  "b": {
+   "commit": "227849bb356b3d44376eb47dfc1409774cafb7fb",
+   "def_hash": "84da278807f04141",
+   "dirty": false,
+   "id": "m-20261006T110153-1edc95",
+   "load_after": 0.428,
+   "load_before": 0.429,
+   "machine": "MPC-HELL",
+   "metric": "script.shipped_bytes",
+   "project": "fastcolabcopy",
+   "reason": null,
+   "seconds": 0.62,
+   "settings": {
+    "gate": "exact",
+    "kind": "size",
+    "measure_files": {
+     "scripts/rsi/shipped_bytes.py": "a7627161f713de86dd6773c91758dd1a2baffd57"
+    }
+   },
+   "started": "2026-10-06T11:01:53+00:00",
+   "status": "ok",
+   "value": 8621
+  },
+  "guards": [
+   {
+    "a": 0,
+    "b": 0,
+    "declared": false,
+    "metric": "arkitect_gating_errors",
+    "state": "ok"
+   },
+   {
+    "a": 3,
+    "b": 3,
+    "declared": false,
+    "metric": "arkitect_warnings",
+    "state": "ok"
+   },
+   {
+    "a": 262,
+    "b": 262,
+    "declared": false,
+    "metric": "arkitect_no_data",
+    "state": "ok"
+   },
+   {
+    "a": 0,
+    "b": 0,
+    "declared": false,
+    "metric": "deps_total",
+    "state": "ok"
+   }
+  ],
+  "method": "exact: 8702 -> 8621",
+  "note": "size-limit suffix parsing as one table loop; same behaviour, 81 bytes smaller",
+  "pattern": null,
+  "verdict": "kept"
+ },
  "def_hash": "84da278807f04141",
  "id": "20261006-script-shipped-bytes-9a06",
  "idea": "Replace the four-branch size-suffix if/elif chain in fastcopy.py with one suffix table loop (same parsing)",

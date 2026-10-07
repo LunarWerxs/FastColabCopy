@@ -1,0 +1,24 @@
+{
+ "closed": null,
+ "def_hash": "5a64254c5433ebaa",
+ "id": "20261007-arkitect-no-data-d602",
+ "idea": "Add a small pytest file for sizeof_fmt so the 4 test-dependent checks have a test file to read",
+ "lane": "normal",
+ "metric": "arkitect_no_data",
+ "opened": {
+  "at": "2026-10-07T10:24:47+00:00",
+  "by": "blogi",
+  "commit": "c62fcd39c65653f8cedf3cca0ffaae341c6bf531",
+  "machine": "MPC-HELL"
+ },
+ "pass_line": null,
+ "predict": {
+  "expect": 258.0,
+  "hi": 261.0,
+  "lo": 230.0,
+  "p_keep": 0.5
+ },
+ "probe_minutes": null,
+ "project": "fastcolabcopy",
+ "schema": "hydra-rsi-trial/1"
+}

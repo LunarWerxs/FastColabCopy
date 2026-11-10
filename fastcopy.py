@@ -17,13 +17,11 @@ def sizeof_fmt(num, suffix='B'):
 
 
 class FastCopy:
-    file_queue = Queue()
-    totalFiles = 0
-    copy_count = 0
-    _lock = threading.Lock()
-    progress_bar = None
-
     def __init__(self, src_dir: str, dest_dir: str, delete: bool = False, sync: bool = False, replace: bool = False, size_limit=0, thread_num=16, ignore_symlinks=False):
+        self.file_queue = Queue()
+        self._lock = threading.Lock()
+        self.progress_bar = None
+        self.copy_count = 0
         self.replace = replace
         self.delete = delete
         self.sync = sync
@@ -132,20 +130,27 @@ class FastCopy:
     def single_copy(self):
         while True:
             file = self.file_queue.get()
-            dest_path = self.dest_dir / file.relative_to(self.src_dir)
-            if self.replace:
-                dest_path.unlink(missing_ok=True)
-            if not dest_path.exists():
-                try:
-                    shutil.copy2(file, str(dest_path.parent), follow_symlinks=False)
-                except:
-                    print(f'Couldn\'t copy "{file}"')
-                    print_exc()
-            if self.delete:
-                file.unlink()
-            self.file_queue.task_done()
-            with self._lock:
-                self.progress_bar.update(1)
+            try:
+                dest_path = self.dest_dir / file.relative_to(self.src_dir)
+                if self.replace:
+                    dest_path.unlink(missing_ok=True)
+                if not dest_path.exists():
+                    try:
+                        shutil.copy2(file, str(dest_path.parent), follow_symlinks=False)
+                        with self._lock:
+                            self.copy_count += 1
+                    except:
+                        print(f'Couldn\'t copy "{file}"')
+                        print_exc()
+                if self.delete:
+                    file.unlink()
+            except:
+                print(f'Couldn\'t process "{file}"')
+                print_exc()
+            finally:
+                self.file_queue.task_done()
+                with self._lock:
+                    self.progress_bar.update(1)
 
     def dispatch_workers(self,
                          file_list: List[str]):
@@ -160,7 +165,7 @@ class FastCopy:
             self.file_queue.put(file_name)
         self.file_queue.join()
         self.progress_bar.close()
-        print('{}/{} files copied successfully.'.format(len(file_list),
+        print('{}/{} files copied successfully.'.format(self.copy_count,
                                                         self.total_files))
         if self.delete:
             shutil.rmtree(self.src_dir)

@@ -12,8 +12,28 @@
     }
   },
   "funding": {
-    "channels": [],
-    "plans": []
+    "channels": [
+      {
+        "guid": "contact-email",
+        "type": "other",
+        "address": "contact@lunarwerx.com",
+        "description": "No payment account is set up yet. Email LunarWerx LLC first to arrange any support for FastColabCopy."
+      }
+    ],
+    "plans": [
+      {
+        "guid": "support-fastcolabcopy",
+        "status": "active",
+        "name": "Support FastColabCopy development",
+        "description": "Any amount, arranged by email first. Nothing is charged through this manifest.",
+        "amount": 0,
+        "currency": "USD",
+        "frequency": "one-time",
+        "channels": [
+          "contact-email"
+        ]
+      }
+    ]
   },
   "projects": [
     {
@@ -28,8 +48,12 @@
         "url": "https://github.com/LunarWerxs/FastColabCopy",
         "wellKnown": "https://github.com/LunarWerxs/FastColabCopy/raw/main/.well-known/funding-manifest-urls"
       },
-      "licenses": ["spdx:MIT"],
-      "tags": ["developer-tools"]
+      "licenses": [
+        "spdx:MIT"
+      ],
+      "tags": [
+        "developer-tools"
+      ]
     }
   ]
 }

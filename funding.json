@@ -1,0 +1,35 @@
+{
+  "version": "v1.1.0",
+  "entity": {
+    "type": "organisation",
+    "role": "owner",
+    "name": "LunarWerx LLC",
+    "email": "contact@lunarwerx.com",
+    "description": "LunarWerx LLC is a Missouri limited liability company that builds open-source and source-available software tools.",
+    "webpageUrl": {
+      "url": "https://github.com/LunarWerxs",
+      "wellKnown": "https://github.com/LunarWerxs/FastColabCopy/raw/main/.well-known/funding-manifest-urls"
+    }
+  },
+  "funding": {
+    "channels": [],
+    "plans": []
+  },
+  "projects": [
+    {
+      "guid": "fastcolabcopy",
+      "name": "FastColabCopy",
+      "description": "Open-source (MIT) tool by LunarWerx LLC.",
+      "webpageUrl": {
+        "url": "https://github.com/LunarWerxs/FastColabCopy",
+        "wellKnown": "https://github.com/LunarWerxs/FastColabCopy/raw/main/.well-known/funding-manifest-urls"
+      },
+      "repositoryUrl": {
+        "url": "https://github.com/LunarWerxs/FastColabCopy",
+        "wellKnown": "https://github.com/LunarWerxs/FastColabCopy/raw/main/.well-known/funding-manifest-urls"
+      },
+      "licenses": ["spdx:MIT"],
+      "tags": ["developer-tools"]
+    }
+  ]
+}

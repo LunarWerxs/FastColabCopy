@@ -93,3 +93,6 @@ Colab has wildly varying transfer speeds, because of this, the best we can offer
 ## Acknowledgements
 This project is tested with BrowserStack.
 <a href="https://www.bugsnag.com/"><img src="https://avatars.githubusercontent.com/u/1058895?v=4" alt="BugSnag" width="20" align="top"></a> Error monitoring is provided free by [BugSnag](https://www.bugsnag.com/) through its open source program.
+
+## Sponsors
+Application performance monitoring sponsored by [AppSignal](https://www.appsignal.com/)

@@ -98,3 +98,5 @@ This project is tested with BrowserStack.
 Application performance monitoring sponsored by [AppSignal](https://www.appsignal.com/)
 
 [![Scout APM](https://www.scoutapm.com/assets/images/logos/scout-wordmark.svg)](https://www.scoutapm.com) Application monitoring sponsored by Scout APM
+
+[GitBook](https://www.gitbook.com/) supports this project with a free Community plan for its documentation.
